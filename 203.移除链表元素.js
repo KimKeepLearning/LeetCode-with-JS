@@ -18,7 +18,7 @@
  * @return {ListNode}
  */
 var removeElements = function (head, val) {
-    // 条件太多
+    // version 1 条件太多
     // while (head && head.val === val) {
     //     head = head.next;
     // }
@@ -41,7 +41,21 @@ var removeElements = function (head, val) {
     //     }
     // return head;
 
-    // 
+    // version 2 用哑巴节点
+    let dummyNode = new ListNode(-1);
+    dummyNode.next = head;
+
+    let prev = dummyNode;
+    while (prev.next) {
+        if (prev.next.val === val) {
+            prev.next = prev.next.next;
+        } else {
+            prev = prev.next;
+        }
+        
+    }
+    return dummyNode.next;
+
 };
 // @lc code=end
 
