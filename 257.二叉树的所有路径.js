@@ -16,8 +16,28 @@
  * @param {TreeNode} root
  * @return {string[]}
  */
-var binaryTreePaths = function(root) {
+var binaryTreePaths = function (root) {
+    if (!root) return [];
+    //先序遍历
+    let paths = [];
+    let path = "";
+    const dfs = (root, path) => {
+        if (!root) return "";
+        if (!root.left && !root.right) {
+            path += root.val.toString();
+            paths.push(path);
+        } else {
+            path += root.val.toString() + "->";
+        }
+
+        dfs(root.left,path);
+        dfs(root.right,path);
+    }
+    dfs(root, path);
+    return paths;
+    
 
 };
+
 // @lc code=end
 
