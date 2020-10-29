@@ -27,6 +27,12 @@ var isSameTree = function(p, q) {
         return false;
     }
     return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+   
+    // 我又写了一个简单版
+    // if (!p && !q) return true;
+    // if (!p || !q) return false;
+    // return p.val === q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+
 };
 // @lc code=end
 
