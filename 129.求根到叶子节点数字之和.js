@@ -43,8 +43,7 @@ var sumNumbers = function (root) {
             result += num;
         }
         dfs(root.left, num);
-        dfs(root.right
-            , num);
+        dfs(root.right, num);
     }
     let num = 0;
     let result = 0;
