@@ -24,3 +24,7 @@ var search = function(nums, target) {
 };
 // @lc code=end
 
+
+// @after-stub-for-debug-begin
+module.exports = search;
+// @after-stub-for-debug-end
