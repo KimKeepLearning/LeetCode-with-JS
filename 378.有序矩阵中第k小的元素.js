@@ -11,7 +11,6 @@
  * @return {number}
  */
 var kthSmallest = function (matrix, k) {
-    
     // 我的暴力算法 ，利用空一维数组排序
     // let array = [];
     // let len = matrix.length;
