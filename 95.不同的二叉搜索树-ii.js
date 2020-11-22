@@ -36,10 +36,8 @@ var generateTrees = function(n) {
             }
         }
         return res;
-        
     }
     return getBSTnum(1, n);
-
 };
 // @lc code=end
 
