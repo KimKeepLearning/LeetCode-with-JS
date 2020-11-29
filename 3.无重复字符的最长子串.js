@@ -17,11 +17,6 @@ var lengthOfLongestSubstring = function(s) {
         right++;
         
         window[c1] ? window[c1]++ : window[c1] = 1;
-        // if (!window[c1]) {
-        //     window[c1] = 1;
-        // } else {
-        //     window[c1]++;
-        // }
         while (window[c1] > 1) {
             let c2 = s[left];
             left++;
