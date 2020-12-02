@@ -10,9 +10,9 @@ var minArray = function(numbers) {
         
         if (numbers[mid] < numbers[high]) {
             high = mid;
-        }else if (numbers[mid] > numbers[high]) {
+        } else if (numbers[mid] > numbers[high]) {
             low = mid + 1;
-        }else if (numbers[mid]===numbers[high]){
+        } else if (numbers[mid]===numbers[high]){
             high--;
         }
     }
