@@ -10,27 +10,36 @@
  * @return {number[]}
  */
 var spiralOrder = function(matrix) {
-    console.log(printCircle(matrix,3,3));
+    
+    let res = [];
+    if (!matrix.length) return [];
+    let startx = 0, starty = 0, endx = matrix.length - 1, endy = matrix[0].length -1;
+    while (startx <= endx && starty <= endy) {
+        console.log(printCircle(matrix, startx, starty, endx, endy));
+        res = res.concat(printCircle(matrix, startx, starty, endx, endy));
+        startx++; starty++;
+        endx--;endy--
+    }
+
+    return res;
+
+
 };
 
-var printCircle = function (matrix,row,col) {
+var printCircle =  (matrix, startX, startY, endX, endY) => {
     let res = [];
-    let i = 0,j=0;
-    while (j++ < col) {
-        res.push(matrix[0][j]);
+    for (let j = startY; j <= endY; j++){
+        res.push(matrix[startX][j]);
     }
-    console.log(res);
-    while (i + 1< row) {
-        res.push(matrix[i + 1][col - 1]);
-        i++;
+    for (let i = startX + 1; i <= endX; i++){
+        
+        res.push(matrix[i][endY]);
     }
-    j--;
-    while (j-1 >= 0) {
-        res.push(matrix[row - 1][j - 1]);
-        j--;
+    for (let j = endY - 1; j >= startY && startX !== endX; j--){
+        res.push(matrix[endX][j]);
     }
-    while (i - 1 >= 0) {
-        res.push(matrix[i - 1][0]);
+    for (let i = endX - 1; i > startX && startY !== endY; i--){
+        res.push(matrix[i][startY]);
     }
     return res;
 }
