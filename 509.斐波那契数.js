@@ -18,15 +18,25 @@ var fib = function (N) {
     /**
      * 为什么对1000000007取模：它是最小的十位质数，可以保证值永远在int的范围内。
      */
-    let f0 = 0 ,f1 = 1, result;
-    if (N === 0) return f0;
-    if (N === 1) return f1;
-    for (let i = 2; i <= N; i++){
-        result = (f0 + f1) %  1000000007;
+    // let f0 = 0 ,f1 = 1, result;
+    // if (N === 0) return f0;
+    // if (N === 1) return f1;
+    // for (let i = 2; i <= N; i++){
+    //     result = (f0 + f1) %  1000000007;
+    //     f0 = f1;
+    //     f1 = result;
+    // }
+    // return result;
+    if(N===0) return 0;
+    if(N===1) return 1;
+    let f0 = 0, f1 = 1;
+    for (let i = 2; i <= N;i++ ){
+        let tmp = f0 + f1;
         f0 = f1;
-        f1 = result;
+        f1 = tmp;
     }
-    return result;
+    return f1;
+
 };
 // @lc code=end
 
